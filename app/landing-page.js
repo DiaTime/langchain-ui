@@ -11,6 +11,8 @@ import {
   Stack,
   Text,
   useColorModeValue,
+  VStack,
+  Image
 } from "@chakra-ui/react";
 import { TbBrandGithub, TbLink } from "react-icons/tb";
 import { signIn } from "next-auth/react";
@@ -24,11 +26,11 @@ export default function LandingPage() {
   const fontColor = useColorModeValue("white", "white");
 
   return (
-    <Flex
+    <div style={{backgroundColor: "#171923"}}>
+      <Flex
       height="100vh"
-      backgroundColor={backgroundColor}
       className={inter.className}
-    >
+      >
       <Container maxWidth="7xl">
         <HStack paddingY={6} justifyContent="space-between">
           <Text as="strong" color={fontColor} fontSize="lg">
@@ -70,16 +72,14 @@ export default function LandingPage() {
         >
           <Heading
             fontSize="7xl"
-            fontWeight={700}
+            fontWeight={900}
             textAlign="center"
-            color={fontColor}
+            bgGradient='linear(to-b, #FFFFFF, #87B992)'
+            bgClip='text'
           >
-            The open source{" "}
-            <Text
-              bgGradient="linear(to-l, #20BDFF, #26D0CE)"
-              backgroundClip="text"
-            >
-              chat-ai toolkit
+            Powerful Chat AI <br></br> for your own use case{" "}
+            <Text>
+              — without dev effort
             </Text>
           </Heading>
           <Stack>
@@ -104,11 +104,129 @@ export default function LandingPage() {
               </Link>
             </HStack>
           </Stack>
-        </Stack>
-        <Container>
-          <Stack></Stack>
-        </Container>
+        </Stack>        
       </Container>
     </Flex>
+    <Container maxW='70%'>
+          <HStack maxW='100%'>
+            <VStack width="33.3%">
+             <Text
+              fontWeight="bold"
+              fontSize="20px"
+              color="#000000"
+              textAlign="center"
+              bgColor="green.300"
+              borderRadius="20px"
+              width="40px"
+              height="40px"
+              paddingTop="5px"
+             >
+              1
+              </Text>
+              <Text
+                fontWeight="bold"
+                fontSize="30px"
+                color="#FFFFFF"
+                textAlign="center"
+              >
+                Build
+              </Text>
+              <Text
+                lineHeight="1.5"
+                fontWeight="regular"
+                fontSize="16px"
+                color="whiteAlpha.900"
+                width="237px"
+                textAlign="center"
+              >
+                Choose LLM model, create prompt templates for your own use cases
+              </Text>
+              <Image 
+                boxSize="285px"
+                src="/build.svg" 
+                alt='build prompt template'
+                />
+            </VStack>
+
+            <VStack width="33.3%">
+             <Text
+              fontWeight="bold"
+              fontSize="20px"
+              color="#000000"
+              textAlign="center"
+              bgColor="green.300"
+              borderRadius="20px"
+              width="40px"
+              height="40px"
+              paddingTop="5px"
+             >
+              2
+              </Text>
+              <Text
+                fontWeight="bold"
+                fontSize="30px"
+                color="#FFFFFF"
+                textAlign="center"
+              >
+                Integrate
+              </Text>
+              <Text
+                lineHeight="1.5"
+                fontWeight="regular"
+                fontSize="16px"
+                color="whiteAlpha.900"
+                width="237px"
+                textAlign="center"
+              >
+                Bring your own data source, e.g. csv, pdf, figma... as well as powerful plugins
+              </Text>
+              <Image 
+                boxSize="285px"
+                src="/integrate.svg" 
+                alt='bring data source to chat ai'
+                />
+            </VStack>
+
+            <VStack width="33.3%">
+             <Text
+              fontWeight="bold"
+              fontSize="20px"
+              color="#000000"
+              textAlign="center"
+              bgColor="green.300"
+              borderRadius="20px"
+              width="40px"
+              height="40px"
+              paddingTop="5px"
+             >
+              3
+              </Text>
+              <Text
+                fontWeight="bold"
+                fontSize="30px"
+                color="#FFFFFF"
+                textAlign="center"
+              >
+                Start
+              </Text>
+              <Text
+                lineHeight="1.5"
+                fontWeight="regular"
+                fontSize="16px"
+                color="whiteAlpha.900"
+                width="237px"
+                textAlign="center"
+              >
+                That’s it, no deployment needed, start using your chat AI right away!
+              </Text>
+              <Image 
+                boxSize="285px" 
+                src="/chat.svg" 
+                alt='start chat'
+                />
+            </VStack>
+          </HStack>
+        </Container>
+    </div>    
   );
 }
