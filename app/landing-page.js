@@ -16,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { TbBrandGithub, TbLink } from "react-icons/tb";
 import { signIn } from "next-auth/react";
+import UseCasePreview from "@/components/UseCasePreview";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,7 +39,7 @@ export default function LandingPage() {
             <Text
               as="span"
               bgGradient="linear(to-l, #20BDFF, #85D8CE)"
-              backgroundClip="text"
+              backgroundClip="text"   
             >
               UI
             </Text>
@@ -226,6 +227,7 @@ export default function LandingPage() {
                 />
             </VStack>
           </HStack>
+          <UseCasePreview />
         </Container>
     </div>    
   );
