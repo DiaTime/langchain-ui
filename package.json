@@ -24,7 +24,7 @@
     "@emotion/styled": "^11.10.6",
     "@microsoft/fetch-event-source": "^2.0.1",
     "@next-auth/prisma-adapter": "^1.0.5",
-    "@prisma/client": "^4.11.0",
+    "@prisma/client": "^4.15.0",
     "@uiw/codemirror-theme-xcode": "^4.19.11",
     "@uiw/react-codemirror": "^4.19.11",
     "@vercel/analytics": "^0.1.11",
@@ -50,6 +50,6 @@
     "typeorm": "^0.3.12"
   },
   "devDependencies": {
-    "prisma": "^4.11.0"
+    "prisma": "^4.15.0"
   }
 }
